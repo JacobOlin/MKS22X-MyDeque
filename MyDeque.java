@@ -87,4 +87,18 @@ public class MyDeque<E>{
     size -= 1;
     return temp;
   }
+
+  public E getFirst() {
+    if (size == 0) {
+      throw new NoSuchElementException();
+    }
+    return data[start];
+  }
+
+  public E getLast() {
+    if (size == 0) {
+      throw new NoSuchElementException();
+    }
+    return data[end];
+  }
 }
