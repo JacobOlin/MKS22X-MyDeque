@@ -76,4 +76,15 @@ public class MyDeque<E>{
     size -= 1;
     return temp;
   }
+
+  public E removeLast() {
+    if (size == 0) {
+      throw new NoSuchElementException();
+    }
+    E temp = data[end];
+    data[end] = null;
+    end = (end - 1 + data.length) % data.length;
+    size -= 1;
+    return temp;
+  }
 }
