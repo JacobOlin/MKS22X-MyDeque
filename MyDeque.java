@@ -34,4 +34,17 @@ public class MyDeque<E>{
     }
     return ans.substring(0,ans.length() - 2);
   }
+
+  public void addFirst(E element) {
+    if (size == data.length) {
+      resize();
+    }
+    data[(start + data.length - 1) % data.length] = element;
+    start = (start + data.length - 1) % data.length;
+    size += 1;
+  }
+
+  private void resize() {
+
+  }
 }
