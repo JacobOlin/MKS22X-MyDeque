@@ -13,4 +13,8 @@ public class MyDeque<E>{
   public MyDeque(int initialCapacity) {
     data = (E[])new Object[10];
   }
+
+  public int size() {
+    return size;
+  }
 }
