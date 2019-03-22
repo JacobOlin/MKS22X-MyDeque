@@ -61,5 +61,6 @@ public class MyDeque<E>{
     }
     start = 0;
     end = size - 1;
+    data = data2;
   }
 }
