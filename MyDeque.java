@@ -30,7 +30,7 @@ public class MyDeque<E>{
       return ans;
     }
     for (int i = 0;i < size;i += 1) {
-      ans += data[i % data.length] + ", ";
+      ans += data[(i + start) % data.length] + ", ";
     }
     return ans.substring(0,ans.length() - 2);
   }
@@ -53,7 +53,13 @@ public class MyDeque<E>{
     size -= 1;
   }
 
+  @SuppressWarnings("unchecked")
   private void resize() {
-
+    E[] data2 = (E[])new Object[data.length * 2 + 1];
+    for (int i = 0;i < size;i += 1) {
+      data2[i] = data[(start + i) % data.length];
+    }
+    start = 0;
+    end = size - 1;
   }
 }
