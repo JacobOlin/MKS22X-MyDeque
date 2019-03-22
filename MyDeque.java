@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 public class MyDeque<E>{
   private E[] data;
   private int size;
@@ -62,5 +64,16 @@ public class MyDeque<E>{
     start = 0;
     end = size - 1;
     data = data2;
+  }
+
+  public E removeFirst() {
+    if (size == 0) {
+      throw new NoSuchElementException();
+    }
+    E temp = data[start];
+    data[start] = null;
+    start = (start + 1) % data.length;
+    size -= 1;
+    return temp;
   }
 }
