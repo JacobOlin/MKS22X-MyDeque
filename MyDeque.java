@@ -17,4 +17,15 @@ public class MyDeque<E>{
   public int size() {
     return size;
   }
+
+  public String toString() {
+    String ans = "";
+    if (size == 0) {
+      return ans;
+    }
+    for (int i = 0;i < size;i += 1) {
+      ans += data[i % data.length] + ", ";
+    }
+    return ans.substring(0,ans.length() - 2);
+  }
 }
