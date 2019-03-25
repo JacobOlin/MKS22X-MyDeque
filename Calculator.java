@@ -14,8 +14,9 @@ public class Calculator{
     }
     //a.add(s.substring(j,s.length()));
     m.addLast(s.substring(j,s.length()));
-    /*for (int i = 0;i < a.size();i += 1) {
-      System.out.print(a.get(i) + " ");
+    /*int r = m.size();
+    for (int i = 0;i < r;i += 1) {
+      System.out.print(m.removeFirst() + " ");
     }
     System.out.println();*/
     return 0.0;
