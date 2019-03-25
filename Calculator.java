@@ -2,15 +2,18 @@ import java.util.ArrayList;
 
 public class Calculator{
   public static double eval(String s) {
-    ArrayList<String> a = new ArrayList<String>();
+    //ArrayList<String> a = new ArrayList<String>();
+    MyDeque<String> m = new MyDeque<String>(s.length() / 3);
     int j = 0;
     for (int i = 0;i < s.length();i += 1) {
       if (s.charAt(i) == ' ') {
-        a.add(s.substring(j,i));
+        //a.add(s.substring(j,i));
+        m.addLast(s.substring(j,i));
         j = i + 1;
       }
     }
-    a.add(s.substring(j,s.length()));
+    //a.add(s.substring(j,s.length()));
+    m.addLast(s.substring(j,s.length()));
     /*for (int i = 0;i < a.size();i += 1) {
       System.out.print(a.get(i) + " ");
     }
