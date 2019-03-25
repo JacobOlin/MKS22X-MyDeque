@@ -32,6 +32,17 @@ public class Calculator{
   }
 
   public static double process(char c, MyDeque<String> m) {
-    return 0.0;
+    if (c == '+') {
+      return 0.0 + Double.parseDouble(m.removeLast()) + Double.parseDouble(m.removeLast());
+    }
+    if (c == '*') {
+      return 1.0 * Double.parseDouble(m.removeLast()) * Double.parseDouble(m.removeLast());
+    }
+    if (c == '-') {
+      double temp = Double.parseDouble(m.removeLast()) + 0.0;
+      return 0.0 + Double.parseDouble(m.removeLast()) - temp;
+    }
+    double temp = Double.parseDouble(m.removeLast()) + 0.0;
+    return 1.0 * Double.parseDouble(m.removeLast()) / temp;
   }
 }
