@@ -27,14 +27,14 @@ public class MyDeque<E>{
   }
 
   public String toString() {
-    String ans = "";
+    String ans = "{";
     if (size == 0) {
-      return ans;
+      return ans + "}";
     }
     for (int i = 0;i < size;i += 1) {
-      ans += data[(i + start) % data.length] + ", ";
+      ans += data[(i + start) % data.length] + " ";
     }
-    return ans.substring(0,ans.length() - 2);
+    return ans + "}";
   }
 
   public void addFirst(E element) {
@@ -50,15 +50,17 @@ public class MyDeque<E>{
   }
 
   public void addLast(E element) {
+    //System.out.println(size);
     if (element == null) {
       throw new NullPointerException();
     }
     if (size == data.length) {
       resize();
     }
-    data[(end + 1) % data.length] = element;
+    System.out.println(start + " " + end + " " + size);
+    data[(end) % data.length] = element;
     end = (end + 1) % data.length;
-    size -= 1;
+    size += 1;
   }
 
   @SuppressWarnings("unchecked")
@@ -68,7 +70,7 @@ public class MyDeque<E>{
       data2[i] = data[(start + i) % data.length];
     }
     start = 0;
-    end = size - 1;
+    end = size;
     data = data2;
   }
 
@@ -88,7 +90,7 @@ public class MyDeque<E>{
       throw new NoSuchElementException();
     }
     E temp = data[end];
-    data[end] = null;
+    data[(end - 1 + data.length) % data.length] = null;
     end = (end - 1 + data.length) % data.length;
     size -= 1;
     return temp;
