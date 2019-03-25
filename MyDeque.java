@@ -89,7 +89,7 @@ public class MyDeque<E>{
     if (size == 0) {
       throw new NoSuchElementException();
     }
-    E temp = data[end];
+    E temp = data[(end - 1 + data.length) % data.length];
     data[(end - 1 + data.length) % data.length] = null;
     end = (end - 1 + data.length) % data.length;
     size -= 1;
