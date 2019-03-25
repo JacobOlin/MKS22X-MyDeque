@@ -19,13 +19,12 @@ public class Calculator{
       }
     }
     //a.add(s.substring(j,s.length()));
-    m.addLast(s.substring(j,s.length()));
+    return process(s.charAt(j),m);
     /*int r = m.size();
     for (int i = 0;i < r;i += 1) {
       System.out.print(m.removeFirst() + " ");
     }
     System.out.println();*/
-    return 0.0;
   }
 
   public static void main(String[] args) {
