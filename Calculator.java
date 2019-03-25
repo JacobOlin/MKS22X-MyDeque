@@ -8,12 +8,15 @@ public class Calculator{
     for (int i = 0;i < s.length();i += 1) {
       if (s.charAt(i) == ' ') {
         //a.add(s.substring(j,i));
+        //if (m.size() > 0) {
+        //  System.out.println(m.size() + " " + m.getLast());
+        //}
         if ("+-*/".contains(s.substring(j,i))) {
           double toAdd = process(s.charAt(j),m);
           m.addLast(toAdd + "");
         }
         else {
-        m.addLast(s.substring(j,i));
+          m.addLast(s.substring(j,i));
         }
         j = i + 1;
       }
@@ -27,13 +30,14 @@ public class Calculator{
     System.out.println();*/
   }
 
-  public static void main(String[] args) {
-    eval(args[0]);
-  }
+  /*public static void main(String[] args) {
+    System.out.println(eval(args[0]));
+  }*/
 
   public static double process(char c, MyDeque<String> m) {
+    //System.out.println(m.size() + " " + m.getFirst() + " " + m.getLast());
     if (c == '+') {
-      return 0.0 + Double.parseDouble(m.removeLast()) + Double.parseDouble(m.removeLast());
+      return 0.0 + Double.parseDouble(m.removeLast()) +  Double.parseDouble(m.removeLast());
     }
     if (c == '*') {
       return 1.0 * Double.parseDouble(m.removeLast()) * Double.parseDouble(m.removeLast());
