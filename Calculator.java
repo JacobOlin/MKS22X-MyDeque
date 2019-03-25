@@ -9,7 +9,7 @@ public class Calculator{
       if (s.charAt(i) == ' ') {
         //a.add(s.substring(j,i));
         if ("+-*/".contains(s.substring(j,i))) {
-
+          double toAdd = process(s.charAt(j),m);
         }
         else {
         m.addLast(s.substring(j,i));
@@ -29,5 +29,9 @@ public class Calculator{
 
   public static void main(String[] args) {
     eval(args[0]);
+  }
+
+  public static double process(char c, MyDeque<String> m) {
+    return 0.0;
   }
 }
