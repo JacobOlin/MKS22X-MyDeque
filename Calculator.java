@@ -10,6 +10,7 @@ public class Calculator{
         //a.add(s.substring(j,i));
         if ("+-*/".contains(s.substring(j,i))) {
           double toAdd = process(s.charAt(j),m);
+          m.addLast(toAdd + "");
         }
         else {
         m.addLast(s.substring(j,i));
