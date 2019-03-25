@@ -57,7 +57,7 @@ public class MyDeque<E>{
     if (size == data.length) {
       resize();
     }
-    System.out.println(start + " " + end + " " + size);
+    //System.out.println(start + " " + end + " " + size);
     data[(end) % data.length] = element;
     end = (end + 1) % data.length;
     size += 1;
