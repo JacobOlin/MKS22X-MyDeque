@@ -8,7 +8,12 @@ public class Calculator{
     for (int i = 0;i < s.length();i += 1) {
       if (s.charAt(i) == ' ') {
         //a.add(s.substring(j,i));
+        if ("+-*/".contains(s.substring(j,i))) {
+
+        }
+        else {
         m.addLast(s.substring(j,i));
+        }
         j = i + 1;
       }
     }
