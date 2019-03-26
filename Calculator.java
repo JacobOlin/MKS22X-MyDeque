@@ -11,7 +11,7 @@ public class Calculator{
         //if (m.size() > 0) {
         //  System.out.println(m.size() + " " + m.getLast());
         //}
-        if ("+-*/".contains(s.substring(j,i))) {
+        if ("+-*/%".contains(s.substring(j,i))) {
           double toAdd = process(s.charAt(j),m);
           m.addLast(toAdd + "");
         }
@@ -46,7 +46,11 @@ public class Calculator{
       double temp = Double.parseDouble(m.removeLast()) + 0.0;
       return 0.0 + Double.parseDouble(m.removeLast()) - temp;
     }
+    if (c == '/') {
+      double temp = Double.parseDouble(m.removeLast()) + 0.0;
+      return 1.0 * Double.parseDouble(m.removeLast()) / temp;
+    }
     double temp = Double.parseDouble(m.removeLast()) + 0.0;
-    return 1.0 * Double.parseDouble(m.removeLast()) / temp;
+    return 1.0 * Double.parseDouble(m.removeLast()) % temp;
   }
 }
